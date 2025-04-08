@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+        font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #f8f9fa;
+    }
+            /* Container Principal */
+            .form-container {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 2.5rem;
+            width: 90%;
+            max-width: 450px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            }
+
+             /* Cabeçalho */
+            .form-container h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #1EADEB;
+            font-weight: 600;
+        }
+
+         /* Grupos de Input */
+         .input-group {
+            margin-bottom: 1.2rem;
+        }
+
+        /* Estilos de Input */
+        .form-container input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="password"],
+        .form-container input[type="email"] {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .form-container input[type="text"]:focus,
+        .form-container input[type="password"]:focus,
+        .form-container input[type="email"]:focus {
+            outline: none;
+            border-color: #1EADEB;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 0 2px rgba(30, 173, 235, 0.3);
+        }
+
+         /* Botões */
+         .form-container input[type="submit"],
+         .form-container input[type="button"],
+         .social-btn {
+             background-color: #1EADEB;
+             color: white;
+             border: none;
+             font-weight: 500;
+             cursor: pointer;
+             margin-top: 0.5rem;
+         }
+ 
+         .form-container input[type="submit"]:hover,
+         .form-container input[type="button"]:hover,
+         .social-btn:hover {
+             background-color: #1E2CEB;
+             transform: translateY(-2px);
+         }
+
+         .form-container input[type="submit"]:active,
+        .form-container input[type="button"]:active,
+        .social-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Botões Sociais */
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px;
+            border-radius: 6px;
+            width: 100%;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn.google {
+            background-color: #DB4437;
+        }
+
+        .social-btn.facebook {
+            background-color: #4267B2;
+        }
+
+        .social-btn i {
+            font-size: 1.2rem;
+        }
+
+        /* Separador */
+        .separador {
+            position: relative;
+            margin: 1.5rem 0;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .separador::before,
+        .separador::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 45%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .separador::before {
+            left: 0;
+        }
+
+        .separador::after {
+            right: 0;
+        }
+
+        /* Links e Textos */
+        .form-footer {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .form-footer a {
+            color: #1EADEB;
+            text-decoration: none;
+        }
+
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Acessibilidade */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* Responsividade */
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 1.5rem;
+                width: 95%;
+            }
+            
+            .form-container h2 {
+                font-size: 1.5rem;
+            }
+        }
+    
+</style>
+<body>
+    <div class="form-container">
+
+
+    <form method="post">
+        <h2>Login Mister</h2>
+
+        <div class="input-group">
+            <button type="button" class="social-btn google">
+                <i class="fab fa-google"></i> Continuar com Google
+            </button>
+        </div>
+        <div class="input-group">
+            <button type="button" class="social-btn facebook">
+                <i class="fab fa-facebook"></i> Continuar com Facebook
+            </button>
+        </div>
+
+        <div class="separador">ou</div>
+        <div class="input-group">
+            <label for="email" class="sr-only">Email</label>
+            <input type="email" id="email" placeholder="Seu email" required>
+        </div>
+        <div class="input-group">
+            <label for="password" class="sr-only">Senha</label>
+            <input type="password" id="password" name="password" placeholder="Sua senha" required>
+        </div>
+        <div class="input-group">
+            <input type="submit" value="Entrar">
+        </div>
+        <div class="form-footer">
+            <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+            <p><a href="esqueci_senha.html">Esqueci minha senha</a></p>
+        </div>
+    </form>
+    </div>
+  
+</body>
+</html>
+
